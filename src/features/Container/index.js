@@ -1,5 +1,5 @@
-import { Wrapper } from "./styled";
+import {Wrapper} from "./styled";
 
-export const Container = ({ children }) => {
+export const Container = ({children}) => {
     return <Wrapper>{children}</Wrapper>;
 };
