@@ -10,7 +10,6 @@ function App() {
             <Container>
                 <Title contentTitle={"Wordcloud game"}/>
                 <Input/>
-                <div>appp</div>
             </Container>
         </div>
     );
