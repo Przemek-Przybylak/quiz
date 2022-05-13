@@ -15,4 +15,9 @@ export const Toggler = styled.button`
   font-size: 17px;
   width: auto;
   font-weight: 600;
+  transition: 300ms;
+  
+  &:active {
+    filter: brightness(120%);
+  }
 `;
