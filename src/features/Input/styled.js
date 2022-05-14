@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const InputBox = styled.input`
   margin: 15px 0px;
@@ -9,4 +9,8 @@ export const InputBox = styled.input`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+
+  ${({ hidden }) => hidden && css`
+            display: none;
+        `};
 `;
