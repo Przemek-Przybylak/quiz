@@ -1,12 +1,13 @@
 import {useState} from "react";
+import {useDispatch} from "react-redux";
 import {Form, InputBox} from "./styled";
 import {Button} from "../Button";
-import {useDispatch} from "react-redux";
-import {addPerson} from "../../common/person/personSlice";
+import {addPerson} from "../game/gameSlice";
 
-export const Input = () => {
+export const Input = ({disabled}) => {
     const [name, setName] = useState("");
-    const dispatch =useDispatch();
+    const dispatch = useDispatch();
+    const answer = "answer";
 
     const onChange = ({target}) => {
         setName(target.value);
@@ -15,17 +16,16 @@ export const Input = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         dispatch(addPerson(name))
-
     }
 
-    return (
-        <Form onSubmit={onSubmit}>
+    return (<>
+        <Form onSubmit={onSubmit} hidden={disabled}>
             <InputBox
                 value={name}
                 onChange={({target}) => onChange({target})}
                 placeholder={"Enter your nickname here..."}
             />
-            <Button/>
+            <Button state={answer}/>
         </Form>
-    )
+    </>)
 }
