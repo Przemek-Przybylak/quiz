@@ -1,13 +1,13 @@
 import createSagaMiddleware from "redux-saga";
 import {configureStore} from "@reduxjs/toolkit";
 import rootSaga from "./rootSaga";
-import personReducer from "../common/person/personSlice"
+import gameReducer from "../features/game/gameSlice"
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer: {
-        person: personReducer,
+        game: gameReducer,
     },
     middleware: [sagaMiddleware],
 });
