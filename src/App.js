@@ -1,15 +1,16 @@
 import {Container} from "./features/Container";
 import {Title} from "./features/Title";
 import {GlobalStyles} from "./GlobalStyles";
-import {Input} from "./features/Input";
+import {Game} from "./features/game/Game";
 
 function App() {
+    const answer = "answer"
     return (
         <div className="App">
             <GlobalStyles/>
             <Container>
                 <Title contentTitle={"Wordcloud game"}/>
-                <Input/>
+                <Game />
             </Container>
         </div>
     );
