@@ -1,8 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    status: "initial",
+    gameStatus: "initial",
+    fetchStatus: "initial",
     personName: "",
+    words: [],
 }
 
 const gameSlice = createSlice({
@@ -11,10 +13,20 @@ const gameSlice = createSlice({
 
     reducers: {
         setApplicationStatus: (state, {payload}) => {
-            state.status = payload;
+            state.gameStatus = payload;
         },
         addPerson: (state, {payload}) => {
             state.personName = payload;
+        },
+        fetchWords: (state) => {
+            state.fetchStatus = "loading"
+        },
+        fetchWordsSuccess: (state, {payload}) => {
+            state.words = payload;
+            state.fetchStatus = "success";
+        },
+        fetchWordsError: (state) => {
+            state.fetchStatus = "error"
         },
     }
 });
@@ -22,9 +34,18 @@ const gameSlice = createSlice({
 export const {
     setApplicationStatus,
     addPerson,
+    fetchWords,
+    fetchWordsSuccess,
+    fetchWordsError,
 } = gameSlice.actions;
 
-export const selectStatus = (state) => state.game.status;
+export const selectStatus = (state) => state.game.gameStatus;
 export const selectPerson = (state) => state.game.person;
+export const selectFetchStatus = (state) => state.game.fetchStatus;
+export const selectWords = (state) => state.game.words;
+export const selectRandomWords = (state) => {
+    const number = Math.floor(Math.random() * 3)
+    return state.game.words[number]
+};
 
 export default gameSlice.reducer;
