@@ -4,13 +4,13 @@ import {GlobalStyles} from "./GlobalStyles";
 import {Game} from "./features/game/Game";
 
 function App() {
-    const answer = "answer"
+
     return (
         <div className="App">
             <GlobalStyles/>
             <Container>
                 <Title contentTitle={"Wordcloud game"}/>
-                <Game />
+                <Game/>
             </Container>
         </div>
     );
