@@ -1,8 +1,8 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {Form, InputBox} from "./styled";
-import {Button} from "../Button";
-import {addPerson} from "../game/gameSlice";
+import {Button} from "../../../common/Button";
+import {addPerson} from "../gameSlice";
 
 export const Input = ({disabled}) => {
     const [name, setName] = useState("");
