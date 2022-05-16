@@ -6,6 +6,7 @@ const initialState = {
     personName: "",
     words: [],
     number: Math.floor(Math.random() * 3),
+    points: 0,
 }
 
 const gameSlice = createSlice({
@@ -29,6 +30,9 @@ const gameSlice = createSlice({
         fetchWordsError: (state) => {
             state.fetchStatus = "error"
         },
+        addPoint: (state) => {
+            state.points = state.points + 1
+        }
     }
 });
 
@@ -38,11 +42,13 @@ export const {
     fetchWords,
     fetchWordsSuccess,
     fetchWordsError,
+    addPoint,
 } = gameSlice.actions;
 
 export const selectStatus = (state) => state.game.gameStatus;
-export const selectPerson = (state) => state.game.person;
+export const selectPerson = (state) => state.game.personName;
 export const selectWords = (state) => state.game.words;
+export const selectPoints = (state) => state.game.points;
 
 export const selectRandomWords = (state) => {
     return state.game.words[state.game.number];
