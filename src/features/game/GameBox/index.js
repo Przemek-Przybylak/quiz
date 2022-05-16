@@ -1,10 +1,10 @@
-import {Title} from "../../Title";
+import {Title} from "../../../common/Title";
+import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {
     fetchWords,
     selectRandomWords
 } from "../gameSlice";
-import {useEffect} from "react";
 import {Wrapper} from "./styled";
 import {Words} from "./Words";
 
@@ -20,12 +20,12 @@ export const GameBox = () => {
         <>
             {words !== undefined &&
                 <>
-                    <Title contentTitle={words.question}/>
+                    <Title contentTitle={words.question} small={true}/>
                     <Wrapper>
                         {
                             words.all_words &&
                             (words.all_words).map((currentWord) => (
-                                <Words currentWord={currentWord}
+                                <Words key={currentWord} currentWord={currentWord}
                                        words={words}
                                 >
                                 </Words>
