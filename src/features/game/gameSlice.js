@@ -5,6 +5,7 @@ const initialState = {
     fetchStatus: "initial",
     personName: "",
     words: [],
+    number: Math.floor(Math.random() * 3),
 }
 
 const gameSlice = createSlice({
@@ -41,11 +42,10 @@ export const {
 
 export const selectStatus = (state) => state.game.gameStatus;
 export const selectPerson = (state) => state.game.person;
-export const selectFetchStatus = (state) => state.game.fetchStatus;
 export const selectWords = (state) => state.game.words;
+
 export const selectRandomWords = (state) => {
-    const number = Math.floor(Math.random() * 3)
-    return state.game.words[number]
+    return state.game.words[state.game.number];
 };
 
 export default gameSlice.reducer;
