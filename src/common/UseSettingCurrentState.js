@@ -9,14 +9,11 @@ export const UseSettingCurrentState = () => {
     switch (currentStatus) {
         case "initial":
             return stateNames[0]
-            break
 
         case "answer":
             return stateNames[1]
-            break
 
         case "checkAnswers":
             return stateNames[2]
-            break
     }
-}
+};
