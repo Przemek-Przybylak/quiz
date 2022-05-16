@@ -1,8 +1,9 @@
 import {useSelector} from "react-redux";
 import {selectStatus} from "../gameSlice";
-import {Input} from "../../Input";
+import {Input} from "../Input";
 import {Button} from "../../../common/Button";
 import {GameBox} from "../GameBox";
+import {Score} from "../Score";
 
 export const Game = () => {
     const status = useSelector(selectStatus);
@@ -10,25 +11,28 @@ export const Game = () => {
     return (
         <>
             {
-                status == "initial" ? (
+                status === "initial" ? (
                         <Input/>
                     ) :
-                    status == "answer" ? (<>
+                    status === "answer" ? (<>
                                 <Input disabled={true}>
                                 </Input>
                                 <GameBox/>
                                 <Button click={true}/>
                             </>
                         ) :
-                        status == "checkAnswers" ? (<>
-                                <Input disabled={true}>
-                                </Input>
-                                <GameBox/>
-                                <Button click={true}/>
-                            </>
-                        ) : (
-                            <div> error</div>
-                        )
+                        status === "checkAnswers" ? (<>
+                                    <Input disabled={true}>
+                                    </Input>
+                                    <GameBox/>
+                                    <Button click={true}/>
+                                </>
+                            ) :
+                            status === "finishGame" ? (
+                                <Score/>
+                            ) : (
+                                <div>error</div>
+                            )
             }
         </>
     )
