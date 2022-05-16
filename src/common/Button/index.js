@@ -14,13 +14,13 @@ export const Button = ({click}) => {
     return (
         <TogglerWrapper>
             {
-                click == true ?
+                click === true ?
                     <Toggler onClick={onClick}>
                         {
-                            status == "initial" ? (
+                            status === "initial" ? (
                                     "play"
                                 ) :
-                                status == "answer" ? (
+                                status === "answer" ? (
                                         "check answer"
                                     ) :
                                     (
@@ -30,10 +30,10 @@ export const Button = ({click}) => {
                     </Toggler> :
                     <Toggler>
                         {
-                            status == "initial" ? (
+                            status === "initial" ? (
                                     "play"
                                 ) :
-                                status == "answer" ? (
+                                status === "answer" ? (
                                         "check answer"
                                     ) :
                                     (
@@ -44,4 +44,4 @@ export const Button = ({click}) => {
             }
         </TogglerWrapper>
     )
-}
+};
