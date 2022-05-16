@@ -8,35 +8,73 @@ export const Wrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
-  padding: 20px;
+  padding: 0px 20px;
   margin: 0;
 `;
 
 export const WordsWrapper = styled.div`
-  height: 20px;
-  margin: 10px 50px;
+  height: 30px;
+  margin: 10px 60px;
   padding: 0px;
   display: grid;
+  align-items: center;
+  justify-content: center;
   grid-template-rows: repeat(2, 1fr);
+
+  :nth-child(2) {
+    margin: 10px 30px;
+  }
 `;
 
 export const Word = styled.button`
   height: 10px;
-  padding: 0px;
+  padding: 3px;
   margin: 0px;
   display: flex;
   align-items: center;
   border: none;
   background-color: inherit;
   justify-content: center;
+  text-decoration: none;
+
+  ${({clicked}) => clicked && css`
+    color: lightcoral;
+  `};
+
+  &:focus {
+    color: lightgray;
+  }
+
+
+  :nth-child(5) {
+    margin-left: 10px;
+  }
+
+  :nth-child(3) {
+    margin-left: 17px;
+  }
+
+  :nth-child(7) {
+    margin-left: 0px;
+  }
 
   ${({good}) => good && css`
     color: green;
+
+    :nth-child(2) {
+      color: springgreen;
+    }
   `};
+
   ${({bad}) => bad && css`
-    color: red;
+    color: lightcoral;
+
+    :nth-child(2) {
+      color: red;
+    }
   `};
-  ${({ hidden }) => hidden && css`
-      display: none;
-`};
+
+  ${({hidden}) => hidden && css`
+    display: none;
+  `};
 `;
