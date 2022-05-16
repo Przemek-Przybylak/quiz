@@ -4,6 +4,7 @@ export const TogglerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 15px;
 `;
 
 export const Toggler = styled.button`
