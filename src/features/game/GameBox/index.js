@@ -15,7 +15,7 @@ export const GameBox = () => {
 
     useEffect(() => {
         dispatch(fetchWords());
-    }, []);
+    }, [dispatch]);
     return (
         <>
             {words !== undefined &&
@@ -33,7 +33,7 @@ export const GameBox = () => {
                         }
                     </Wrapper>
                 </>
-            }
+            };
         </>
     )
 };
