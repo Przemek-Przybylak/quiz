@@ -6,6 +6,10 @@ export const Wrapper = styled.title`
   font-weight: 700;
   display: flex;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    font-size: 30px;
+  };
+
   ${({small}) => small && css`
     font-size: 25px;
     margin-bottom: 10px;

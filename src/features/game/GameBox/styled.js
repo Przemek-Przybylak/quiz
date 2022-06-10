@@ -10,6 +10,10 @@ export const Wrapper = styled.section`
   gap: 5px;
   padding: 0px 20px;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    gap: 2px;
+  };
 `;
 
 export const WordsWrapper = styled.div`
