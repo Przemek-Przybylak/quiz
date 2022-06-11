@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/quiz/static/js/main.e667c8ac.js",
+    "main.js": "/quiz/static/js/main.a5bd4d8a.js",
     "index.html": "/quiz/index.html",
-    "main.e667c8ac.js.map": "/quiz/static/js/main.e667c8ac.js.map"
+    "main.a5bd4d8a.js.map": "/quiz/static/js/main.a5bd4d8a.js.map"
   },
   "entrypoints": [
-    "static/js/main.e667c8ac.js"
+    "static/js/main.a5bd4d8a.js"
   ]
 }
