@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+const currentHeight = window.innerHeight;
 
 export const GlobalStyles = createGlobalStyle`
   html {
@@ -13,5 +14,10 @@ export const GlobalStyles = createGlobalStyle`
     overflow-y: hidden;
     transition: 300ms;
     font-family: 'Poppins', sans-serif;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+      height: ${currentHeight};
+      overflow-x: hidden;
+    };
   };
 `;
