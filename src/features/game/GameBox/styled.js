@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     gap: 2px;
-    width: 100%;
+    width: 100vw;
     height: 300px;
     padding: 0;
   };
