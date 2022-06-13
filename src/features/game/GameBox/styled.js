@@ -13,12 +13,15 @@ export const Wrapper = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     gap: 2px;
+    width: 100%;
+    height: 300px;
+    padding: 0;
   };
 `;
 
 export const WordsWrapper = styled.div`
   height: 30px;
-  margin: 10px 60px;
+  margin: 10px 30px;
   padding: 0px;
   display: grid;
   align-items: center;
@@ -26,7 +29,11 @@ export const WordsWrapper = styled.div`
   grid-template-rows: repeat(2, 1fr);
 
   :nth-child(2) {
-    margin: 10px 30px;
+    margin: 10px 15px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+     margin: 5px 15px;
+    };
   }
 `;
 
@@ -41,6 +48,11 @@ export const Word = styled.button`
   justify-content: center;
   text-decoration: none;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    height: 5px;
+    padding: 2px;
+  };
+
   ${({clicked}) => clicked && css`
     color: lightcoral;
   `};
@@ -52,14 +64,26 @@ export const Word = styled.button`
 
   :nth-child(5) {
     margin-left: 10px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+      margin-left: 5px;
+    };
   }
 
   :nth-child(3) {
     margin-left: 17px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+      margin-left: 7px;
+    };
   }
 
   :nth-child(7) {
-    margin-left: 0px;
+    margin-left: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+      margin-left: 0;
+    };
   }
 
   ${({good}) => good && css`
