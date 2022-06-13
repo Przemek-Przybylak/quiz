@@ -11,7 +11,10 @@ export const Wrapper = styled.section`
   padding: 0px 20px;
   margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+  @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     gap: 2px;
     width: 100vw;
     height: 300px;
@@ -21,7 +24,7 @@ export const Wrapper = styled.section`
 
 export const WordsWrapper = styled.div`
   height: 30px;
-  margin: 10px 30px;
+  margin: 10px 20px;
   padding: 0px;
   display: grid;
   align-items: center;
@@ -29,10 +32,10 @@ export const WordsWrapper = styled.div`
   grid-template-rows: repeat(2, 1fr);
 
   :nth-child(2) {
-    margin: 10px 15px;
+    margin: 10px 10px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
-     margin: 5px 15px;
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
+      margin: 5px 15px;
     };
   }
 `;
@@ -48,7 +51,7 @@ export const Word = styled.button`
   justify-content: center;
   text-decoration: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+  @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
     height: 5px;
     padding: 2px;
   };
@@ -65,7 +68,7 @@ export const Word = styled.button`
   :nth-child(5) {
     margin-left: 10px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
       margin-left: 5px;
     };
   }
@@ -73,7 +76,7 @@ export const Word = styled.button`
   :nth-child(3) {
     margin-left: 17px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
       margin-left: 7px;
     };
   }
@@ -81,7 +84,7 @@ export const Word = styled.button`
   :nth-child(7) {
     margin-left: 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
       margin-left: 0;
     };
   }
