@@ -18,14 +18,14 @@ export const Game = () => {
                                 <Input disabled={true}>
                                 </Input>
                                 <GameBox/>
-                                <Button click={true}/>
+                                <Button title={"check answer"} click={true}/>
                             </>
                         ) :
                         status === "checkAnswers" ? (<>
                                     <Input disabled={true}>
                                     </Input>
                                     <GameBox/>
-                                    <Button click={true}/>
+                                    <Button title={"finish game"} click={true}/>
                                 </>
                             ) :
                             status === "finishGame" ? (

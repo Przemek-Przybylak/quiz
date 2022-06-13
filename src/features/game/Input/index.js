@@ -29,7 +29,7 @@ export const Input = ({disabled}) => {
                 onChange={({target}) => onChange({target})}
                 placeholder={"Enter your nickname here..."}
             />
-            <Button/>
+            <Button title={"play"}/>
         </Form>
     </>)
 };
