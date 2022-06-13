@@ -1,5 +1,15 @@
 import {Wrapper} from "./styled";
 
 export const Container = ({children}) => {
-    return <Wrapper>{children}</Wrapper>;
+
+    const onResize = () => {
+        let innerWindowHeight = window.innerHeight;
+        document.documentElement.style.setProperty('--innerWindowHeight', `${innerWindowHeight}px`);
+    };
+
+    return (
+        <Wrapper onresize={onResize}>
+            {children}
+        </Wrapper>
+    )
 };
