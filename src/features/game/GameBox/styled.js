@@ -8,7 +8,7 @@ export const Wrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   gap: 5px;
-  padding: 0px 20px;
+  padding: 0 20px;
   margin: 0;
 
   @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
@@ -25,17 +25,17 @@ export const Wrapper = styled.section`
 export const WordsWrapper = styled.div`
   height: 30px;
   margin: 10px 20px;
-  padding: 0px;
+  padding: 0;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-rows: repeat(2, 1fr);
 
   :nth-child(2) {
-    margin: 10px 10px;
+    margin: 10px 15px;
 
     @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}) {
-      margin: 5px 15px;
+      margin: 10px 15px;
     };
   }
 `;
@@ -43,7 +43,7 @@ export const WordsWrapper = styled.div`
 export const Word = styled.button`
   height: 10px;
   padding: 3px;
-  margin: 0px;
+  margin: 0;
   display: flex;
   align-items: center;
   border: none;

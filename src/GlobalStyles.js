@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    border: none;
     transition: 300ms;
     font-family: 'Poppins', sans-serif;
     background-color: white;

@@ -7,8 +7,10 @@ export const Container = ({children}) => {
         document.documentElement.style.setProperty('--innerWindowHeight', `${innerWindowHeight}px`);
     };
 
+    onResize();
+
     return (
-        <Wrapper onresize={onResize}>
+        <Wrapper onResize={onResize}>
             {children}
         </Wrapper>
     )
