@@ -1,15 +1,17 @@
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Word, WordsWrapper} from "../styled";
-import {addPoint, selectStatus} from "../../gameSlice";
+import {addClickedWord, addPoint, selectClickedWords, selectStatus} from "../../gameSlice";
 
 export const Words = ({currentWord, words}) => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
+    const clickedWords = useSelector(selectClickedWords);
     const [answerStatus, setAnswerStatus] = useState();
     const goodWords = words.good_words;
 
     const onClick = () => {
+        dispatch(addClickedWord(currentWord))
         if (goodWords.includes(currentWord)) {
             setAnswerStatus(true);
             dispatch(addPoint());
@@ -27,11 +29,11 @@ export const Words = ({currentWord, words}) => {
                     )
             }
             {
-                status === "checkAnswers" && answerStatus === false ? (<Word bad>{currentWord}</Word>
+                status === "checkAnswers" && answerStatus === false ? (<Word disabled bad>{currentWord}</Word>
                     ) :
-                    status === "checkAnswers" && answerStatus === true ? (<Word good>{currentWord}</Word>
+                    status === "checkAnswers" && answerStatus === true ? (<Word disabled good>{currentWord}</Word>
                     ) : (
-                        <Word>{currentWord}</Word>
+                        clickedWords.includes(currentWord) ? <Word disabled>{currentWord}</Word> : <Word>{currentWord}</Word>
                     )
             }
         </WordsWrapper>
