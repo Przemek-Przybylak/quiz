@@ -55,10 +55,6 @@ export const Word = styled.button`
     height: 5px;
     padding: 2px;
   };
-
-  ${({clicked}) => clicked && css`
-    color: #ccc;
-  `};
   
   &:focus {
     color: lightgray;
