@@ -57,9 +57,9 @@ export const Word = styled.button`
   };
 
   ${({clicked}) => clicked && css`
-    color: lightcoral;
+    color: #ccc;
   `};
-
+  
   &:focus {
     color: lightgray;
   }
