@@ -6,6 +6,7 @@ export const Wrapper = styled.section`
   border: 1px solid black;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 5px;
   padding: 0 20px;
