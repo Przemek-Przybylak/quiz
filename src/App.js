@@ -1,6 +1,6 @@
 import {Container} from "./features/Container";
 import {GlobalStyles} from "./GlobalStyles";
-import {Game} from "./features/game/Game";
+import {Input} from "./features/game/Input";
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
         <div className="App">
             <GlobalStyles/>
             <Container>
-                <Game/>
+            <Input />
             </Container>
         </div>
     );
