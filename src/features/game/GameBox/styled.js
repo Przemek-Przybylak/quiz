@@ -27,10 +27,11 @@ export const WordsWrapper = styled.div`
   height: 30px;
   margin: 10px 20px;
   padding: 0;
-  display: grid;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  grid-template-rows: repeat(2, 1fr);
 
   :nth-child(2) {
     margin: 10px 15px;
@@ -56,7 +57,7 @@ export const Word = styled.button`
     height: 5px;
     padding: 2px;
   };
-  
+
   &:focus {
     color: lightgray;
   }

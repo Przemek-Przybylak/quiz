@@ -32,19 +32,16 @@ export const Words = ({currentWord, words}) => {
                             </>
                         ) :
                         status === "checkAnswers" ? (<>
-                                    <Word></Word>
                                     <Word disabled>{currentWord}</Word>
                                 </>
                             ) :
                             (
                                 clickedWords.includes(currentWord) ?
                                     <>
-                                        <Word></Word>
                                         <Word disabled>{currentWord}</Word>
                                     </>
                                     :
                                     <>
-                                        <Word></Word>
                                         <Word>{currentWord}</Word>
                                     </>
                             )
