@@ -27,21 +27,27 @@ export const Words = ({currentWord, words}) => {
                         </>
                     ) :
                     status === "checkAnswers" && answerStatus === true ? (<>
-                            <Word good>Good</Word>
-                            <Word disabled good>{currentWord}</Word>
-                        </>
-                    ) : (
-                        clickedWords.includes(currentWord) ?
-                            <>
-                            <Word></Word>
-                            <Word disabled>{currentWord}</Word>
+                                <Word good>Good</Word>
+                                <Word disabled good>{currentWord}</Word>
                             </>
-                            :
-                            <>
-                                <Word></Word>
-                                <Word>{currentWord}</Word>
-                            </>
-                    )
+                        ) :
+                        status === "checkAnswers" ? (<>
+                                    <Word></Word>
+                                    <Word disabled>{currentWord}</Word>
+                                </>
+                            ) :
+                            (
+                                clickedWords.includes(currentWord) ?
+                                    <>
+                                        <Word></Word>
+                                        <Word disabled>{currentWord}</Word>
+                                    </>
+                                    :
+                                    <>
+                                        <Word></Word>
+                                        <Word>{currentWord}</Word>
+                                    </>
+                            )
             }
         </WordsWrapper>
     )
