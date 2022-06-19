@@ -7,26 +7,26 @@ export const Words = ({currentWord, words}) => {
     const dispatch = useDispatch();
     const status = useSelector(selectStatus);
     const clickedWords = useSelector(selectClickedWords);
-    const [answerStatus, setAnswerStatus] = useState();
+    const [result, setResult] = useState();
     const goodWords = words.good_words;
 
     const onClick = () => {
         dispatch(addClickedWord(currentWord))
         if (goodWords.includes(currentWord)) {
-            setAnswerStatus(true);
+            setResult(true);
             dispatch(addPoint());
-        } else setAnswerStatus(false)
+        } else setResult(false)
     };
 
     return (
         <WordsWrapper onClick={onClick}>
             {
-                status === "checkAnswers" && answerStatus === false ? (<>
+                status === "checkAnswers" && result === false ? (<>
                             <Word bad>Bad</Word>
                             <Word disabled bad>{currentWord}</Word>
                         </>
                     ) :
-                    status === "checkAnswers" && answerStatus === true ? (<>
+                    status === "checkAnswers" && result === true ? (<>
                                 <Word good>Good</Word>
                                 <Word disabled good>{currentWord}</Word>
                             </>
