@@ -21,21 +21,28 @@ export const Words = ({currentWord, words}) => {
     return (
         <WordsWrapper onClick={onClick}>
             {
-                status === "checkAnswers" && answerStatus === false ? (<Word bad>Bad</Word>
+                status === "checkAnswers" && answerStatus === false ? (<>
+                            <Word bad>Bad</Word>
+                            <Word disabled bad>{currentWord}</Word>
+                        </>
                     ) :
-                    status === "checkAnswers" && answerStatus === true ? (<Word good>Good</Word>
+                    status === "checkAnswers" && answerStatus === true ? (<>
+                            <Word good>Good</Word>
+                            <Word disabled good>{currentWord}</Word>
+                        </>
                     ) : (
-                        <Word></Word>
-                    )
-            }
-            {
-                status === "checkAnswers" && answerStatus === false ? (<Word disabled bad>{currentWord}</Word>
-                    ) :
-                    status === "checkAnswers" && answerStatus === true ? (<Word disabled good>{currentWord}</Word>
-                    ) : (
-                        clickedWords.includes(currentWord) ? <Word disabled>{currentWord}</Word> : <Word>{currentWord}</Word>
+                        clickedWords.includes(currentWord) ?
+                            <>
+                            <Word></Word>
+                            <Word disabled>{currentWord}</Word>
+                            </>
+                            :
+                            <>
+                                <Word></Word>
+                                <Word>{currentWord}</Word>
+                            </>
                     )
             }
         </WordsWrapper>
     )
-};
+}
